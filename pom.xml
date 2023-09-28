@@ -40,6 +40,11 @@
                         </goals>
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <relocations>
+                                <relocation>
+                                    <pattern>org.bstats</pattern>
+                                </relocation>
+                            </relocations>
                         </configuration>
                     </execution>
                 </executions>
@@ -73,6 +78,13 @@
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
             <version>24.0.1</version>
+        </dependency>
+        <!-- https://github.com/Bastian/bstats-metrics/releases -->
+        <dependency>
+            <groupId>org.bstats</groupId>
+            <artifactId>bstats-bukkit</artifactId>
+            <version>3.0.2</version>
+            <scope>provided</scope>
         </dependency>
         <!-- https://hub.spigotmc.org/stash/projects/SPIGOT/repos/spigot/commits -->
         <dependency>
