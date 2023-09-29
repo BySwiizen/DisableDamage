@@ -43,6 +43,7 @@
                             <relocations>
                                 <relocation>
                                     <pattern>org.bstats</pattern>
+                                    <shadedPattern>fr.byswiizen.disabledamage</shadedPattern>
                                 </relocation>
                             </relocations>
                         </configuration>
