@@ -5,7 +5,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
+
 public class DisableDamage extends JavaPlugin implements Listener {
+
 
     @Override
     public void onEnable() {
@@ -16,6 +18,7 @@ public class DisableDamage extends JavaPlugin implements Listener {
         getLogger().info("-----------------------");
 
     }
+
     @Override
     public void onDisable() {
         getLogger().info("------------------------");
@@ -23,10 +26,10 @@ public class DisableDamage extends JavaPlugin implements Listener {
         getLogger().info("The plugin is disabled.");
         getLogger().info("------------------------");
     }
+
     @EventHandler
     public void onDamage(EntityDamageByEntityEvent event) {
         event.setCancelled(true);
 
     }
-
 }
