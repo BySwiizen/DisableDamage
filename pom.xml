@@ -7,7 +7,7 @@
     <packaging>jar</packaging>
     <description>DisableDamage is a minecraft plugin that disables damage</description>
 
-    <version>1.3</version>
+    <version>1.4</version>
 
 
     <properties>
