@@ -1,17 +1,16 @@
 package fr.byswiizen.disabledamage;
 
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import fr.byswiizen.disabledamage.events.damageListener;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
-public class DisableDamage extends JavaPlugin implements Listener {
+public class DisableDamage extends JavaPlugin {
 
 
     @Override
     public void onEnable() {
-        getServer().getPluginManager().registerEvents(this, this);
+        registerEvents();
         getLogger().info("-----------------------");
         getLogger().info(this.getName() + " v" + this.getDescription().getVersion());
         getLogger().info("The plugin is enabled.");
@@ -27,9 +26,8 @@ public class DisableDamage extends JavaPlugin implements Listener {
         getLogger().info("------------------------");
     }
 
-    @EventHandler
-    public void onDamage(EntityDamageByEntityEvent event) {
-        event.setCancelled(true);
-
+    private void registerEvents() {
+        PluginManager pm = getServer().getPluginManager();
+        pm.registerEvents(new damageListener(), this);
     }
 }
