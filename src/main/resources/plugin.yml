@@ -3,3 +3,4 @@ version: '${project.version}'
 main: fr.byswiizen.disabledamage.DisableDamage
 api-version: '1.13'
 description: '${project.description}'
+author: BySwiizen
