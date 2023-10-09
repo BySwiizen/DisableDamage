@@ -2,3 +2,4 @@ name: DisableDamage
 version: '${project.version}'
 main: fr.byswiizen.disabledamage.DisableDamage
 api-version: '1.20'
+description: '${project.description}'
