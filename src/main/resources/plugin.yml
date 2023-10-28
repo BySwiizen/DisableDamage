@@ -1,8 +1,8 @@
 name: DisableDamage
 main: fr.byswiizen.disabledamage.DisableDamage
-description: '${project.description}'
+description: DisableDamage is a minecraft plugin that disables damage
 
-version: '${project.version}'
+version: @version@
 api-version: '1.13'
 
 author: BySwiizen
