@@ -1,6 +1,7 @@
 package fr.byswiizen.disabledamage;
 
 import fr.byswiizen.disabledamage.events.damageListener;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -10,6 +11,7 @@ public class DisableDamage extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        Metrics metrics = new Metrics(this, 20809);
         registerEvents();
         getLogger().info("-----------------------");
         getLogger().info(this.getName() + " v" + this.getDescription().getVersion());
