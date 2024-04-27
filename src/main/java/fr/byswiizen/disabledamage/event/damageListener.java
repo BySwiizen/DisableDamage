@@ -1,4 +1,4 @@
-package fr.byswiizen.disabledamage.events;
+package fr.byswiizen.disabledamage.event;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
