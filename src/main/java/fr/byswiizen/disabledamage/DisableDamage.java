@@ -11,7 +11,7 @@ public class DisableDamage extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        Metrics metrics = new Metrics(this, 20809);
+		registerMetrics();
         registerEvent();
         getLogger().info("-----------------------");
         getLogger().info(this.getName() + " v" + this.getDescription().getVersion());
@@ -28,8 +28,12 @@ public class DisableDamage extends JavaPlugin {
         getLogger().info("------------------------");
     }
 
+	private void registerMetrics() {
+		Metrics metrics = new Metrics(this, 20809);
+	}
+
     private void registerEvent() {
-        PluginManager pm = getServer().getPluginManager();
-        pm.registerEvents(new damageListener(), this);
+        PluginManager pluginmanager = getServer().getPluginManager();
+        pluginmanager.registerEvents(new damageListener(), this);
     }
 }
