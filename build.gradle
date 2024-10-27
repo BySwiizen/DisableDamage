@@ -10,7 +10,7 @@ plugins {
 }
 
 group 'fr.byswiizen.disabledamage'
-version '5.1'
+version '5.2'
 
 compileJava {
     sourceCompatibility = '21'
