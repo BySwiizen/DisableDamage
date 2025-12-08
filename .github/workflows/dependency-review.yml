@@ -18,9 +18,9 @@ jobs:
 
     steps:
       # https://github.com/actions/checkout
-      - name: Checkout repository
-        uses: actions/checkout@v5.0.0
+      - name: Checkout Git repository
+        uses: actions/checkout@v6.0.1
 
       # https://github.com/actions/dependency-review-action
       - name: Dependency Review
-        uses: actions/dependency-review-action@v4.8.0
+        uses: actions/dependency-review-action@v4.8.2

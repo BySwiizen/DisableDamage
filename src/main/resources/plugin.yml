@@ -1,0 +1,20 @@
+name: ${name}
+main: ${groupid}.${artifactid}
+description: ${description}
+author: ${author}
+
+version: ${version}
+api-version: ${apiversion}
+
+
+load: POSTWORLD
+
+
+commands:
+  disabledamage:
+    description: Main command of DisableDamage
+    usage: /<command> [help|reload]
+permissions:
+  disabledamage.reload:
+    description: Reload permission of DisableDamage
+    default: op
