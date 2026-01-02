@@ -1,5 +1,5 @@
-prefix: <gold>DisableDamage <gray>»
-reload-success: <green>The configuration files have been reloaded.
+prefix: '&6DisableDamage &7»'
+reload-success: '&aThe configuration files have been reloaded.'
 help:
-  - <yellow>/disabledamage reload <black>- <white>Reloads the plugin configuration files.
-  - <yellow>/disabledamage help <black>- <white>Displays the help command.
+  - '&e/disabledamage reload &0- &fReloads the plugin configuration files.'
+  - '&e/disabledamage help &0- &fDisplays the help command.'

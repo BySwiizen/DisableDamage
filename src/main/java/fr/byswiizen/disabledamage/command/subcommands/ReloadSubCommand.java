@@ -1,7 +1,7 @@
 package fr.byswiizen.disabledamage.command.subcommands;
 
 import fr.byswiizen.disabledamage.DisableDamage;
-import net.kyori.adventure.text.minimessage.MiniMessage;
+import fr.byswiizen.disabledamage.util.ColorUtil;
 import revxrsal.commands.annotation.Command;
 import revxrsal.commands.annotation.Subcommand;
 import revxrsal.commands.bukkit.annotation.CommandPermission;
@@ -23,9 +23,9 @@ public class ReloadSubCommand {
         try {
             DisableDamage.configfile.reload();
             DisableDamage.messagesfile.reload();
-            sender.reply(MiniMessage.miniMessage().deserialize(DisableDamage.messagesfile.getString("prefix") + " " + DisableDamage.messagesfile.getString("reload-success")));
+            sender.reply(ColorUtil.translate(DisableDamage.messagesfile.getString("prefix") + " " + DisableDamage.messagesfile.getString("reload-success")));
         } catch (Exception error) {
-            sender.reply(MiniMessage.miniMessage().deserialize("<red>Error loading files."));
+            sender.reply(ColorUtil.translate("&4Error loading files."));
             error.printStackTrace();
         }
     }

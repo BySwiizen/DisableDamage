@@ -5,7 +5,6 @@ import fr.byswiizen.disabledamage.command.MainCommand;
 import fr.byswiizen.disabledamage.command.subcommands.HelpSubCommand;
 import fr.byswiizen.disabledamage.command.subcommands.ReloadSubCommand;
 import fr.byswiizen.disabledamage.listener.DamageListener;
-import net.kyori.adventure.platform.bukkit.BukkitAudiences;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -24,9 +23,9 @@ public class DisableDamage extends JavaPlugin {
 		registerMetrics();
 		registerFiles();
         registerListener();
-		registerSubCommands();
+		registerCommand();
         getLogger().info("-----------------------");
-        getLogger().info(this.getName() + " v" + this.getDescription().getVersion());
+        getLogger().info(getName() + " v" + getDescription().getVersion());
         getLogger().info("The plugin is enabled.");
         getLogger().info("-----------------------");
 
@@ -35,7 +34,7 @@ public class DisableDamage extends JavaPlugin {
     @Override
     public void onDisable() {
         getLogger().info("------------------------");
-        getLogger().info(this.getName() + " v" + this.getDescription().getVersion());
+        getLogger().info(getName() + " v" + getDescription().getVersion());
         getLogger().info("The plugin is disabled.");
         getLogger().info("------------------------");
     }
@@ -62,9 +61,8 @@ public class DisableDamage extends JavaPlugin {
         pluginmanager.registerEvents(new DamageListener(this), this);
     }
 
-	private void registerSubCommands() {
+	private void registerCommand() {
 		BukkitCommandHandler handler = BukkitCommandHandler.create(this);
-		handler.enableAdventure();
 		handler.register(new MainCommand(this));
 		handler.register(new HelpSubCommand(this));
 		handler.register(new ReloadSubCommand(this));

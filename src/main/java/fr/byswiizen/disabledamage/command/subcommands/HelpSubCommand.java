@@ -1,7 +1,7 @@
 package fr.byswiizen.disabledamage.command.subcommands;
 
 import fr.byswiizen.disabledamage.DisableDamage;
-import net.kyori.adventure.text.minimessage.MiniMessage;
+import fr.byswiizen.disabledamage.util.ColorUtil;
 import revxrsal.commands.annotation.Command;
 import revxrsal.commands.annotation.Subcommand;
 import revxrsal.commands.bukkit.BukkitCommandActor;
@@ -19,7 +19,7 @@ public class HelpSubCommand {
     @Subcommand("help")
     public void help(BukkitCommandActor sender) {
 		for (String line : DisableDamage.messagesfile.getStringList("help")) {
-            sender.reply(MiniMessage.miniMessage().deserialize(DisableDamage.messagesfile.getString("prefix") + " " + line));
+            sender.reply(ColorUtil.translate(DisableDamage.messagesfile.getString("prefix") + " " + line));
         }
 	}
 }
