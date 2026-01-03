@@ -6,6 +6,7 @@ import fr.byswiizen.disabledamage.command.subcommands.HelpSubCommand;
 import fr.byswiizen.disabledamage.command.subcommands.ReloadSubCommand;
 import fr.byswiizen.disabledamage.listener.DamageListener;
 import org.bstats.bukkit.Metrics;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import revxrsal.commands.bukkit.BukkitCommandHandler;
@@ -57,7 +58,7 @@ public class DisableDamage extends JavaPlugin {
 	}
 
     private void registerListener() {
-        PluginManager pluginmanager = getServer().getPluginManager();
+        PluginManager pluginmanager = Bukkit.getServer().getPluginManager();
         pluginmanager.registerEvents(new DamageListener(this), this);
     }
 
