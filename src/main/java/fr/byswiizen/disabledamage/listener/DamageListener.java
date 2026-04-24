@@ -3,7 +3,7 @@ package fr.byswiizen.disabledamage.listener;
 import fr.byswiizen.disabledamage.DisableDamage;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
 
 
 public class DamageListener implements Listener {
@@ -15,8 +15,8 @@ public class DamageListener implements Listener {
 
 
     @EventHandler
-    public void onDamage(EntityDamageByEntityEvent event) {
-		if (DisableDamage.configfile.getBoolean("true")) {
+    public void onDamage(EntityDamageEvent event) {
+		if (DisableDamage.configfile.getBoolean("disable-damage")) {
 			event.setCancelled(true);
 		}
     }

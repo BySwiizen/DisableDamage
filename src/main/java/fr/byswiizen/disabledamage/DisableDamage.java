@@ -1,5 +1,6 @@
 package fr.byswiizen.disabledamage;
 
+import com.tcoded.folialib.FoliaLib;
 import dev.dejvokep.boostedyaml.YamlDocument;
 import fr.byswiizen.disabledamage.command.MainCommand;
 import fr.byswiizen.disabledamage.command.subcommands.HelpSubCommand;
@@ -21,6 +22,7 @@ public class DisableDamage extends JavaPlugin {
 
     @Override
     public void onEnable() {
+		registerFolia();
 		registerMetrics();
 		registerFiles();
         registerListener();
@@ -39,6 +41,10 @@ public class DisableDamage extends JavaPlugin {
         getLogger().info("The plugin is disabled.");
         getLogger().info("------------------------");
     }
+
+	private void registerFolia() {
+		new FoliaLib(this);
+	}
 
 	private void registerMetrics() {
 		new Metrics(this, 20809);
