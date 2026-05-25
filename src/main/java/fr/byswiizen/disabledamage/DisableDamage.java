@@ -31,7 +31,6 @@ public class DisableDamage extends JavaPlugin {
         getLogger().info(getName() + " v" + getDescription().getVersion());
         getLogger().info("The plugin is enabled.");
         getLogger().info("-----------------------");
-
     }
 
     @Override
