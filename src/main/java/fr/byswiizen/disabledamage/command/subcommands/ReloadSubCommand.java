@@ -25,7 +25,6 @@ public class ReloadSubCommand {
             DisableDamage.messagesfile.reload();
             sender.reply(ColorUtil.translate(DisableDamage.messagesfile.getString("prefix") + " " + DisableDamage.messagesfile.getString("reload-success")));
         } catch (Exception error) {
-            sender.reply(ColorUtil.translate("&4Error loading files."));
             error.printStackTrace();
         }
     }
