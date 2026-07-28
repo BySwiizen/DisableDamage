@@ -2,9 +2,9 @@ package fr.byswiizen.disabledamage.command;
 
 import fr.byswiizen.disabledamage.DisableDamage;
 import fr.byswiizen.disabledamage.command.subcommands.HelpSubCommand;
+import org.bukkit.command.CommandSender;
 import revxrsal.commands.annotation.Command;
-import revxrsal.commands.annotation.DefaultFor;
-import revxrsal.commands.bukkit.BukkitCommandActor;
+import revxrsal.commands.annotation.CommandPlaceholder;
 
 
 @Command("disabledamage")
@@ -18,8 +18,8 @@ public class MainCommand {
     }
 
 
-    @DefaultFor("disabledamage")
-    public void help(BukkitCommandActor sender) {
+    @CommandPlaceholder
+    public void help(CommandSender sender) {
         helpcommand.help(sender);
     }
 }

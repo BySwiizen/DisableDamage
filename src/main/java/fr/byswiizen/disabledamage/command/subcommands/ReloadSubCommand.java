@@ -2,10 +2,10 @@ package fr.byswiizen.disabledamage.command.subcommands;
 
 import fr.byswiizen.disabledamage.DisableDamage;
 import fr.byswiizen.disabledamage.util.ColorUtil;
+import org.bukkit.command.CommandSender;
 import revxrsal.commands.annotation.Command;
 import revxrsal.commands.annotation.Subcommand;
 import revxrsal.commands.bukkit.annotation.CommandPermission;
-import revxrsal.commands.bukkit.BukkitCommandActor;
 
 
 @Command("disabledamage")
@@ -19,11 +19,11 @@ public class ReloadSubCommand {
 
     @Subcommand("reload")
     @CommandPermission("disabledamage.reload")
-    public void reload(BukkitCommandActor sender) {
+    public void reload(CommandSender sender) {
         try {
             DisableDamage.configfile.reload();
             DisableDamage.messagesfile.reload();
-            sender.reply(ColorUtil.translate(DisableDamage.messagesfile.getString("prefix") + " " + DisableDamage.messagesfile.getString("reload-success")));
+            sender.sendMessage(ColorUtil.translate(DisableDamage.messagesfile.getString("prefix") + " " + DisableDamage.messagesfile.getString("reload-success")));
         } catch (Exception error) {
             error.printStackTrace();
         }

@@ -2,9 +2,9 @@ package fr.byswiizen.disabledamage.command.subcommands;
 
 import fr.byswiizen.disabledamage.DisableDamage;
 import fr.byswiizen.disabledamage.util.ColorUtil;
+import org.bukkit.command.CommandSender;
 import revxrsal.commands.annotation.Command;
 import revxrsal.commands.annotation.Subcommand;
-import revxrsal.commands.bukkit.BukkitCommandActor;
 
 
 @Command("disabledamage")
@@ -17,9 +17,9 @@ public class HelpSubCommand {
 
 
     @Subcommand("help")
-    public void help(BukkitCommandActor sender) {
+    public void help(CommandSender sender) {
 		for (String line : DisableDamage.messagesfile.getStringList("help")) {
-            sender.reply(ColorUtil.translate(DisableDamage.messagesfile.getString("prefix") + " " + line));
+            sender.sendMessage(ColorUtil.translate(DisableDamage.messagesfile.getString("prefix") + " " + line));
         }
 	}
 }
